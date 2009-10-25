@@ -8,7 +8,7 @@ affinities [] = []
 affinities list = [
     (pair, score) |
       pair <- sort uniquePairs,
-      score <- frequencyOf (pair, allPairs)
+      let score = frequencyOf (pair, allPairs)
   ]
     where
       allPairs = allCityPairs list
@@ -29,5 +29,5 @@ allCityPairs = concatMap cityPairs
 uniqueCityPairs :: [(User, [City])] -> [CityPair]
 uniqueCityPairs list = nub $ allCityPairs list
 
-frequencyOf :: (CityPair, [CityPair]) -> [Int]
-frequencyOf (pairToMatch, list) = [length [ pair | pair <- list, pair == pairToMatch]]
+frequencyOf :: (CityPair, [CityPair]) -> Int
+frequencyOf (pairToMatch, list) = length [ pair | pair <- list, pair == pairToMatch]
