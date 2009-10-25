@@ -16,8 +16,8 @@ affinities list = [
 
 type Result = (CityPair, AffinityScore)
 type AffinityScore = Int
-type City = [Char]
-type User = [Char]
+type City = String
+type User = String
 type CityPair = (City, City)
 
 cityPairs :: (User, [City]) -> [CityPair]
