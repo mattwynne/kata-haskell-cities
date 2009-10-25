@@ -9,17 +9,17 @@ main = runTestTT $ TestList tests
 tests = unitTests ++ acceptanceTests
 
 unitTests = [
-    "cityPairs - for a single user, single pair"
-      ~: cityPairs ("matt", ["london", "paris"])
-      ~?= [("london", "paris")],
-
-    "cityPairs - for a single user, multiple pairs"
-      ~: cityPairs ("matt", ["london", "paris", "nyc"])
-      ~?= [("london", "paris"),("london","nyc"),("paris","nyc")],
-
-    "allCityPairs - for multiple users, single pair"
-      ~: allCityPairs [("matt", ["london", "paris"]),("dave",["london","paris"])]
-      ~?= [("london", "paris"),("london","paris")]
+    -- "cityPairs - for a single user, single pair"
+    --   ~: cityPairs ("matt", ["london", "paris"])
+    --   ~?= [("london", "paris")],
+    --
+    -- "cityPairs - for a single user, multiple pairs"
+    --   ~: cityPairs ("matt", ["london", "paris", "nyc"])
+    --   ~?= [("london", "paris"),("london","nyc"),("paris","nyc")],
+    --
+    -- "allCityPairs - for multiple users, single pair"
+    --   ~: allCityPairs [("matt", ["london", "paris"]),("dave",["london","paris"])]
+    --   ~?= [("london", "paris"),("london","paris")]
   ]
 
 acceptanceTests = [
